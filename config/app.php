@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => "IceStorm - Servers",
+    'name' => env('APP_NAME', 'WebESX - AdminPanel'),
 
     /*
     |--------------------------------------------------------------------------
