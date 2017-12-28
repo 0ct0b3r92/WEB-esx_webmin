@@ -15,13 +15,6 @@ class AuthController extends Controller
     protected $steam;
 
     /**
-     * The redirect URL.
-     *
-     * @var string
-     */
-    protected $redirectURL = '/home';
-
-    /**
      * AuthController constructor.
      *
      * @param SteamAuth $steam
@@ -29,6 +22,16 @@ class AuthController extends Controller
     public function __construct(SteamAuth $steam)
     {
         $this->steam = $steam;
+    }
+
+    /**
+     * the user to the authentication page
+     *
+     * @return Login views
+     */
+    public function login()
+    {
+        return view('auth.login2');
     }
 
     /**
@@ -57,7 +60,7 @@ class AuthController extends Controller
 
                 Auth::login($user, true);
 
-                return redirect($this->redirectURL); // redirect to site
+                return redirect( route('home') ); // redirect to site
             }
         }
         return $this->redirectToSteam();
@@ -74,6 +77,7 @@ class AuthController extends Controller
         $user = User::where('steamid', 'steam:'.dechex($info->steamID64))->first();
 
         if (!is_null($user)) {
+            $user->update(['username' => $info->personaname, 'avatar' => $info->avatarfull]);
             return $user;
         }
 

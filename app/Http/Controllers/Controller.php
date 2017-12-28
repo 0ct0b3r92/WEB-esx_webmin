@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Players;
 use Carbon\Carbon;
+use DiscordWebhooks\Client;
+use DiscordWebhooks\Embed;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -13,21 +15,31 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    protected $template;
+
     public function __construct(){
         Carbon::setLocale('fr');
+        $this->template = 'Themes.Sadmin';
     }
 
 
-    public function canView($Players,$Group){
-
-        if($Player->group == $Group) {
-            return true;
-        }
-
-        return redirect(url('home'));
-
+    public function view($views, $vars = null){
+        return view($this->template . '.' .$views, $vars);
     }
 
+    public function publishDiscord(string $msg,$vars){
+        $webhook = new Client(env('DISCORD_WEBHOOKS'));
+        $embed = new Embed();
+        $embed->author($vars->Member->username);
+        $embed->title('Nouvelle Candidature');
+        $embed->thumbnail($vars->Member->avatar);
+        $embed->url(route('whitelist.show',['id' => $vars->id]));
+
+
+
+
+        $webhook->username(config('app.name'))->embed($embed)->send();
+    }
 
     public function getMoney(){
 
@@ -42,12 +54,11 @@ class Controller extends BaseController
 
     }
 
-    protected function getSystemLoad()
-    {
-        // CPU USAGE
-        $loads = sys_getloadavg();
-        $core_nums = trim(shell_exec("grep -E '^processor' /proc/cpuinfo|wc -l"));
-        $load = round($loads[0]/($core_nums + 1)*100, 0);
-        return $load;
+    protected function isWhitelisted(){
+        return true;
+    }
+
+    protected function OnlinePlayers(){
+
     }
 }

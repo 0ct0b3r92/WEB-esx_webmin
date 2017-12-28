@@ -14,4 +14,8 @@ class Players extends Model
         return $this->belongsTo(Jobs::class,'job','name');
     }
 
+    public function JobGrade(){
+        return $this->belongsTo(JobGrades::class,'job','job_name');
+    }
+
 }

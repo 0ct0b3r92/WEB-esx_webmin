@@ -17,8 +17,9 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('steamid')->unique();
-            $table->string('email')->unique()->nullable();
             $table->string('avatar');
+            $table->boolean('whitelisted')->default(false);
+            $table->boolean('owner')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
