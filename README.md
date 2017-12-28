@@ -13,7 +13,7 @@ Member List
 ![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/Member-list.png)
 
 Issue Tracker
-![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/issue-Tracker.png)
+![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/Issue-Tracker.png)
 
 Issue Topic
 ![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/issue-topic.png)
