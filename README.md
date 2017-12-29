@@ -2,8 +2,6 @@
 
 This is a work in progress.
 
-## REQUIRED
-
 ## Apache
 Laravel includes a public/.htaccess file that is used to provide URLs without the index.php front controller in the path. 
 Before serving Laravel with Apache, be sure to enable the mod_rewrite module so the .htaccess file will be honored by the server.
