@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('login', 'AuthController@login')->name('login');
+Route::get('/', 'AuthController@login')->name('login');
 Route::get('login/steam', 'AuthController@redirectToSteam')->name('login.steam');
 Route::get('auth/steam/handle', 'AuthController@handle')->name('auth.steam.handle');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
