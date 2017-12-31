@@ -1,12 +1,21 @@
 {
-    "name": " mrlutin/esx-panel",
-    "description": "The ESX web panel.",
+    "name": "mrlutin/esx-panel",
+    "description": "Webadmin panel for FiveM ESX servers",
+    "keywords": ["fivem","esx","webadmin"],
+    "homepage": "https://github.com/MrLutin/WEB-esx_webmin",
     "authors": [
         {
-            "name": "Mr Lutin"
+            "name": "Mr Lutin",
+            "homepage": "https://github.com/MrLutin/",
+            "role": "Developer"
+        },
+        {
+            "name": "Renaiku",
+            "homepage": "https://github.com/renaiku/",
+            "role": "Contributor"
         }
     ],
-    "keywords": ["framework", "laravel","ESX"],
+    
     "license": "MIT",
     "type": "project",
     "require": {
