@@ -1,5 +1,5 @@
 {
-    "name": " mrlutin/esx-web-admin",
+    "name": " mrlutin/esxpanel",
     "description": "The ESX web panel.",
     "keywords": ["framework", "laravel","ESX"],
     "license": "MIT",
