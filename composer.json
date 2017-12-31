@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "MrLutin/EsxWebAdmin",
+    "description": "The ESX web panel.",
+    "keywords": ["framework", "laravel","ESX"],
     "license": "MIT",
     "type": "project",
     "require": {
