@@ -1,6 +1,11 @@
 {
-    "name": " mrlutin/esxpanel",
+    "name": " mrlutin/esx-panel",
     "description": "The ESX web panel.",
+    "authors": [
+        {
+            "name": "Mr Lutin",
+        }
+    ],
     "keywords": ["framework", "laravel","ESX"],
     "license": "MIT",
     "type": "project",
