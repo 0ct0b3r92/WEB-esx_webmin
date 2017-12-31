@@ -3,7 +3,7 @@
     "description": "The ESX web panel.",
     "authors": [
         {
-            "name": "Mr Lutin",
+            "name": "Mr Lutin"
         }
     ],
     "keywords": ["framework", "laravel","ESX"],
