@@ -1,4 +1,5 @@
-# esx_webadmin
+# EsxManager
+based on Laravel 5.6
 
 This is a work in progress.
 
@@ -21,18 +22,6 @@ location / {
     try_files $uri $uri/ /index.php?$query_string;
 }
 
-## SCREENSHOT
-Home Page
-![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/Home.png)
+## License
 
-Member List
-![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/Member-list.png)
-
-Issue Tracker
-![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/Issue-Tracker.png)
-
-Issue Topic
-![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/issue-topic.png)
-
-Whitelist Request
-![screenshot](http://cdn.icestorm-servers.com/files/WebESX-AdminPanel/whitelist-request.png)
+The EsxManager is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
