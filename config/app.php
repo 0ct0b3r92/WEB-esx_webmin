@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'WebESX - AdminPanel'),
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'fr',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,11 +163,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Invisnik\LaravelSteamAuth\SteamServiceProvider::class,
-
-        /*
-         * Package Service Providers...
-         */
 
         /*
          * Application Service Providers...
@@ -177,6 +172,13 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        /*
+         * Package Service Providers...
+         */
+
+        Invisnik\LaravelSteamAuth\SteamServiceProvider::class,
+        Softon\SweetAlert\SweetAlertServiceProvider::class,
 
     ],
 
@@ -226,6 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'SWAL' => Softon\SweetAlert\Facades\SWAL::class,
 
     ],
 

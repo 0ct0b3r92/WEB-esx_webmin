@@ -35,9 +35,9 @@ class isAdmin
      */
     public function handle($request, Closure $next)
     {
-        if( ! $this->auth->user()->owner) {
+        if( ! $this->auth->user()->isAdmin) {
             session()->flash('error_msg','This resource is restricted to Administrators!');
-            return redirect()->route('home');
+            return redirect(config('app.url'));
         }
         return $next($request);
     }

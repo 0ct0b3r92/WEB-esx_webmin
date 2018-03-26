@@ -2,27 +2,13 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon;
 
 class Whitelist extends Model
 {
-    protected $table = "applications";
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'user_id','rpname','town','experiance','history','birthday','admin_id','sexe'
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
     ];
 
     protected $dates = ['created_at', 'updated_at', 'birthday'];
@@ -40,7 +26,25 @@ class Whitelist extends Model
         return $this->belongsTo(User::class,'invited_by','id');
     }
 
-    public function Admin(){
+    public function Staff(){
         return $this->belongsTo(User::class,'admin_id','id');
+    }
+
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->attributes['birthday'])->age;
+    }
+
+    public function getStatusBadgeAttribute()
+    {
+        if($this->status == 3){
+            return '<span class="label label-default">Banni</span>';
+        }elseif ($this->status == 2){
+            return '<span class="label label-danger">Refusé</span>';
+        }elseif ($this->status == 1){
+            return '<span class="label label-success">Accepté</span>';
+        }else{
+            return'<span class="label label-warning">En Attente</span>';
+        }
     }
 }
